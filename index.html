@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "css/reset.css">
+    <link rel="stylesheet" href = "css/style.css"> 
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <title>Home/Pets</title>
+</head>
+<body>
+    <a href = "">Skip to Main Content</a>
+    <nav>
+        <ul class = "regular">
+            <li> <a class = "current" href= "index.html">Home/Pets</a> </li>
+            <li> <a href= "recipes.html">Recipes</a> </li>
+            <li> <a href= "travel.html">Travel</a> </li>
+        </ul>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Pages</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a class = "current" href="index.html">Home/Pets</a>
+              <a href="recipes.html">Recipes</a>
+              <a href="travel.html">Travel</a>
+            </div>
+        </div>
+        <script>
+            /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+        </script>
+        <div class="navbar">
+             <ul class="pets">
+                <li> <a href="#basil">Basil</a> </li>
+                <li> <a href="#honey">Honey</a> </li>
+                <li> <a href="#milktea">Milktea</a> </li>
+                <li> <a href="#bo">Bo</a> </li>
+                <li> <a href="#chonks">Chonks</a> </li>
+             </ul>
+         </div>
+    </nav>
+    <main>
+        <h1>Pets</h1>
+        <div class = "name" id = "basil">
+            <h2>Basil</h2>
+        </div>
+        <div class = "image">
+            <img width = "400px" src = images/gurl_who_u_looking_at.png alt = "Fluffy white dog with paw on knee, begging for attention and giving you the side eye"> 
+        </div>
+        <div>
+            <p>Basil, otherwise known as Slaysil, is a very energetic white, slightly crusty and trusty, dog (bichon) . She gets princess treatment in her household, but also out in public. As a consequence, she is very clingy and loves to lick, especially in the face.</p>
+            <p>She endeavors in multiple hobbies and activities, which include flying, licking, standing on two legs, ringing bells, and jumping through hula hoops.</p>
+        </div>
+        <div>
+            <h3>Photo Gallery</h3>
+        </div>
+        <div class = "gallary">
+            <img width = "200" src = images/naruto_basil.png alt = "White bichon in a naruto robe (Akatsuki)">
+            <img width = "200" src = images/balloosil.png alt = "Balloon attached to white bichon"> 
+            <img width = "200" src = images/pet_me.png alt = "White bichon leaning against leg">
+            <img width = "200" src = images/superbasil_HOP.png alt = "White bichon floating in air while running">
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/naruto_basil.png" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="images/balloosil.png" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/pet_me.png" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/superbasil_HOP.png" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/naruto_basil.png" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/balloosil.png" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/pet_me.png" style="width:50%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/superbasil_HOP.png" style="width:50%">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/naruto_basil.png" onclick="currentSlide(1)" alt="White bichon in a naruto robe (Akatsuki)">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/balloosil.png" onclick="currentSlide(2)" alt="Balloon attached to white bichon">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/pet_me.png" onclick="currentSlide(3)" alt="White bichon leaning against leg">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/superbasil_HOP.png" onclick="currentSlide(3)" alt="White bichon floating in air while running">
+      </div>
+    </div>
+  </div>
+  <script>
+    // Open the Modal
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+    
+    // Close the Modal
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+        <div class = "scroll" style="height:100px;width:100%;overflow:auto;background-color:yellowgreen;font-family:sans-serif;padding:10px" tabindex = "0">
+            <h3>Likes</h3>
+            <ul>
+                <li>Empty water bottles</li>
+                <li>Socks</li>
+                <li>Cats</li>
+            </ul>
+            <!--Bianca and Alina-->
+        </div>
+        <div class = "name" id = "honey">
+            <h2>Honey</h2>
+        </div>
+        <div class = "image">
+            <img width="400px" src="images/honey_main.jpeg" alt="Honey is a medium-sized golden retriever with honey brown fur. She has a white patch of fur on her chest and her right eye is smaller than her left">
+        </div>
+        <div>
+            <p>Honeys favorite thing in the world is swimming. Even if it is the middle of January and half of the lake is frozen, Honey will be in the water. She is a smart swimmer, so when my brother and I go underwater, she will follow our air bubbles and be waiting for us when we come up for air.</p>
+            <p>While most dogs like to chase balls or sticks, Honey likes to chase rocks. She will even chase rocks into the water and stick her whole face in the water to try and find the rock thrown. Chasing rocks is her main form of exercise right now as she refuses to go on walks from our house. If we drive her to another spot and walk from there, Honey will go on a walk but she refuses to leave our driveway when we try to walk from home. Finally one other Honey-ism is that her safe place is bathtubs. Many times our family has woken up in the middle of the night and found Honey is a bathtub</p>
+        </div>
+        <div>
+            <h3>Photo Gallery</h3>
+        </div>
+        <div class = "gallary">
+            <img width="200" src="images/honey_rock.jpeg" alt="Honey playing with a rock">
+            <img width="200" src="images/honey_sleeping.jpeg" alt="Honey taking a nap">
+            <img width="200" src="images/honey_smiling.jpeg" alt="Honey smiling">
+            <img width="200" src="images/honey_swimming.jpeg" alt="Honey swimming">
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/honey_rock.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="images/honey_sleeping.jpeg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/honey_smiling.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/honey_swimming.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/honey_rock.jpeg" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/honey_sleeping.jpeg" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/honey_smiling.jpeg" style="width:50%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/honey_swimming.jpeg" style="width:50%">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/honey_rock.jpeg" onclick="currentSlide(1)" alt="Honey playing with a rock">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/honey_sleeping.jpeg" onclick="currentSlide(2)" alt="Honey taking a nap">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/honey_smiling.jpeg" onclick="currentSlide(3)" alt="Honey smiling">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/honey_swimming.jpeg" onclick="currentSlide(3)" alt="Honey swimming">
+      </div>
+    </div>
+  </div>
+        <div class = "scroll" style="height:100px;width:100%;overflow:auto;background-color:yellowgreen;font-family:sans-serif;padding:10px" tabindex = "0">
+            <h3>Likes</h3>
+            <ul>
+                <li>Likes rocks</li>
+                <li>Likes food</li>
+                <li>Likes attention</li>
+            </ul>
+            <!-- Abbie Tooman -->
+        </div>
+        <!-- Pet #2 -->
+        <div class = "name" id = "milktea">
+            <h2>Milktea</h2>
+        </div>
+        <div class = "image">
+            <img width="400px" src="images/Main.JPG" alt="Milktea taking nap">
+        </div>
+        <div> 
+            <p>Milktea is a Scottish fold with a personality of a princess. She loves her veggies and refuses to eat anything dropped on the ground. She makes it clear when she has a demand of any sort by complaining in a loud, distinguished manner. If what she says could be translated, it probably would be, “This is atrocious, the water container has been empty for the 3rd time this week. I want to see the manager.”.</p>
+            <p>Despite her cuteness and royalty, she actually suffers from a genetic disorder intentionally brought upon by humans. I highly advise against keeping a Scottish fold because they are in constant pain when they reach around 2 years old. Cartilage accumulates around her paw joints and tail joints and it becomes painful for them to even walk. She is living evidence of human’s cruelty of breeding animals to look pretty while sacrificing the animals’ health.  </p>
+        </div>
+        <div>
+            <h3>Photo Gallery</h3>
+        </div>
+        <div class = "gallary">
+            <img width="200" src="images/Milktea_comfy.jpg" alt="Milktea enjoying a good massage">
+            <img width="200" src="Milktea_laptop.JPG" alt="Baby Milktea On Laptop">
+            <img width="200" src="images/Milktea_mirror.jpeg" alt="Milktea sighing at mirror">
+            <img width="200" src="images/Milktea_catbox.JPG" alt="Visual description: Milktea Catbox position">
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/Milktea_comfy.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="Milktea_laptop.JPG" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/Milktea_mirror.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/Milktea_catbox.JPG" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/Milktea_comfy.jpg" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="Milktea_laptop.JPG" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/Milktea_mirror.jpeg" style="width:50%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/Milktea_catbox.JPG" style="width:50%">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/Milktea_comfy.jpg" onclick="currentSlide(1)" alt="Milktea enjoying a good massage">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="Milktea_laptop.JPG" onclick="currentSlide(2)" alt="Baby Milktea On Laptop">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/Milktea_mirror.jpeg" onclick="currentSlide(3)" alt="Milktea sighing at mirror">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/Milktea_catbox.JPG" onclick="currentSlide(3)" alt="Visual description: Milktea Catbox position">
+      </div>
+    </div>
+  </div>
+        <div class = "scroll" style="height:100px;width:100%;overflow:auto;background-color:yellowgreen;font-family:sans-serif;padding:10px" tabindex = "0">
+            <h3>Likes</h3>
+            <ul>
+                <li>She loves individual corn kernels served on human hands</li>
+                <li>She enjoys sitting royally on suitcases to claim ownership of her humans</li>
+                <li>She prefers to be alone and sit on soft surfaces in her free time</li>
+            </ul>
+            <!-- Olivia Ren -->
+        </div>
+        <!-- Pet 3 -->
+        <div class = "name" id = "bo">
+            <h2>Bo</h2>
+        </div>
+        <div class = "image">
+            <img width="400px" src="images/bo.jpg" alt="Black and white dog sitting on grass.">
+        </div>
+        <div>
+            <p> Bo is a Portuguese Water Dog with black and white fur. His paws are white too, so they always get dirty when outside. He is 12 years old, but he still likes to run around outside a lot. </p>
+            <p>He has an abundance of toys but only likes to play with a couple. He enjoys going on walks and especially on trails in the woods. He has a few dog friends that he likes to go on playdates with as well.
+            </p>
+        </div>
+        <div>
+            <h3>Photo Gallery</h3>
+        </div>
+        <div class = "gallary">
+            <img width="200" src="images/bo_walking.jpg" alt="black and white dog walking on grass">
+            <img width="200" src="images/bo_and_friend.png" alt="black and white dog sitting by other black dog">
+            <img width="200" src="images/bo_plane.jpg" alt="black and white dog in front of airplane">
+            <img width="200" src="images/bo_chair.jpg" alt="black and white dog sitting on top of chair">
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/bo_walking.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="images/bo_and_friend.png" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/bo_plane.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/bo_chair.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/bo_walking.jpg" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/bo_and_friend.png" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/bo_plane.jpg" style="width:50%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/bo_chair.jpg" style="width:50%">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/bo_walking.jpg" onclick="currentSlide(1)" alt="black and white dog walking on grass">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/bo_and_friend.png" onclick="currentSlide(2)" alt="black and white dog sitting by other black dog">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/bo_plane.jpg" onclick="currentSlide(3)" alt="black and white dog in front of airplane">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/bo_chair.jpg" onclick="currentSlide(3)" alt="black and white dog sitting on top of chair">
+      </div>
+    </div>
+  </div>
+        <div class = "scroll" style="height:100px;width:100%;overflow:auto;background-color:yellowgreen;font-family:sans-serif;padding:10px;" tabindex = "0">
+            <h3>Likes</h3>
+            <ul>
+                <li>Walks</li>
+                <li>The Sun</li>
+                <li>Treats</li>
+            </ul>
+            <!-- Joseph Schaubroeck -->
+        </div>
+        <!-- Pet 4 -->
+        <div class = "name" id = "chonks">
+            <h2>Chunky Doll (Chonks)</h2>
+        </div>
+        <div class = "image">
+            <img width="400px" src="images/chonks.png" alt="Furry white and dark brown ragdoll.">
+        </div>
+        <div>
+            <p>Chunky Doll or as he prefers to respond to, Chocks, is a 4-year-old ragdoll. His name was inspired by his breed and looks. As a kitten, he was even chunkier and blended right in with a fluffy white rug we had that he loved playing hide and seek in. He’s a very lazy but playful cat, only playful when he feels like it.</p>
+            <p>He is a pretty but very difficult cat as he is white but hates showers and loves rolling around in the house collecting dust. To get him into a bath we often have to lure him in with fake human treats. And even then he jumps right out of the bath and runs around the whole bathroom making the floors wet. Nevertheless, he’s a very soft, cuddly, and loving cat.</p>
+        </div>
+        <div>
+            <h3>Photo Gallery</h3>
+        </div>
+        <div class = "gallary">
+            <img width="200" src="images/chonks_happy.JPG" alt="Younger Chonks being played with">
+            <img width="200" src="images/chonks_baby.JPG" alt="Baby Chonks on a cat bed">
+            <img width="200" src="images/chonks_bath.png" alt="Fluffy, grumpy Chonks after bath time">
+            <img width="200" src="images/chonks_neutral.JPG" alt="Chonks standing tall fully clean and white">
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/chonks_happy.JPG" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="images/chonks_baby.JPG" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/chonks_bath.png" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/chonks_neutral.JPG" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/chonks_happy.JPG" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/chonks_baby.JPG" style="width:50%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/chonks_bath.png" style="width:50%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/chonks_neutral.JPG" style="width:50%">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/chonks_happy.JPG" onclick="currentSlide(1)" alt="Younger Chonks being played with">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/chonks_baby.JPG" onclick="currentSlide(2)" alt="Baby Chonks on a cat bed">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="images/chonks_bath.png" onclick="currentSlide(3)" alt="Fluffy, grumpy Chonks after bath time">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/chonks_neutral.JPG" onclick="currentSlide(3)" alt="Chonks standing tall fully clean and white">
+      </div>
+    </div>
+  </div>
+        <div class = "scroll" style="height:100px;width:100%;overflow:auto;background-color:yellowgreen;font-family:sans-serif;padding:10px" tabindex = "0">
+            <h3>Likes</h3>
+            <ul>
+                <li>Human treats</li>
+                <li>Naps</li>
+                <li>Cuddles</li>
+            </ul>
+            <!-- Syeda Shahriah -->
+        </div>
+    </main>
+    <script src="css/lightbox.js"></script>
+</body>
+</html>

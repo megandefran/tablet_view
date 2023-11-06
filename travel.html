@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "css/reset.css">
+    <link rel="stylesheet" href = "css/style.css"> 
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <title>Travel</title>
+</head>
+<body>
+    <a href = "#main" id = "skip">Skip to Main Content</a>
+    <nav>
+        <ul class = "regular">
+            <li> <a href= "index.html">Home/Pets</a> </li>
+            <li> <a href= "recipes.html">Recipes</a> </li>
+            <li> <a class = "current" href= "travel.html">Travel</a> </li>
+        </ul>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Pages</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="index.html">Home/Pets</a>
+              <a href="recipes.html">Recipes</a>
+              <a class = "current" href="travel.html">Travel</a>
+            </div>
+          </div>
+    <script>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    </script>
+        <div class="navbar">
+            <ul class="travel">
+               <li> <a href="#prague">Prague</a> </li>
+               <li> <a href="#okavango">Okavango Delta</a> </li>
+               <li> <a href="#zermatt">Zermatt</a> </li>
+               <li> <a href="#paris">Paris</a> </li>
+               <li> <a href="#tokyo">Tokyo</a> </li>
+               <li> <a href="#florence">Florence</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <main id = "main">
+        <div class = "travelname" id = "prague">
+            <h2>Prague</h2>
+        </div>
+        <div class = "animate">
+            <figure>
+            <img width = 400 src = images/prague_one.webp alt = "Prague city during day"> 
+            <img width = 400 src = images/praguecity.jpeg alt = "Prague city sunrise">
+            </figure>
+        </div>
+        <div>
+        <h3>Geographic Location: Czechia</h3>
+        <p>Prague is the location of several University of Michigan Study Abroad programs. Many schools such as LSA, Ross, Engineering, and School of Information send students annually to Eastern Europe to explore an international education for their desired topic. </p>
+        <p>Prague is a country in central Europe. It is the capital of Czech Republic. It has a lot of historical features and buildings. It is a beautiful city with a ton of architecture. Prague is a very popular destination spot for tourists.</p>
+        </div>
+        <div>
+        <h3>Photo Gallery</h3>
+        </div>
+    <div class = "travel_gallary">
+        <img width = 200 src = images/oldtownprague.jpeg alt = "Picture of Prague statues and skyline at sunset"> 
+        <img width = 200 src = images/dancinghouse.jpeg alt = "Famous Prague dancing house landmark"> 
+        <img width = 200 src = images/praguedecor.jpg alt = "Decorations from Prague market">
+        <img width = 200 src = images/lonelyplanet.jpeg alt = "Prague clock, Lonely Planet, landmark">
+        <figcaption>Prague statues and skyline at sunset</figcaption>
+        <figcaption>Famous landmark: The Prague Dancing House</figcaption>
+        <figcaption>Prague decor of wooden mice and people</figcaption>
+        <figcaption>Well-known clock in the middle of Prague city center</figcaption>
+    </div>
+    <div class="row">
+        <div class="column"> 
+        <img src="images/oldtownprague.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+        </div>
+            <div class="column">
+              <img src="images/dancinghouse.jpeg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+            </div>
+            <div class="column">
+              <img src="images/praguedecor.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+            </div>
+            <div class="column">
+                <img src="images/lonelyplanet.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+              </div>
+    </div>
+    <!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+<span class="close cursor" onclick="closeModal()">&times;</span>
+<div class="modal-content">
+
+  <div class="mySlides">
+    <div class="numbertext">1 / 4</div>
+    <img src="images/oldtownprague.jpeg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 4</div>
+    <img src="images/dancinghouse.jpeg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 4</div>
+    <img src="images/praguedecor.jpg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 4</div>
+    <img src="images/lonelyplanet.jpeg" style="width:50%">
+  </div>
+
+  <!-- Next/previous controls -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Caption text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail image controls -->
+  <div class="column">
+    <img class="demo" src="images/oldtownprague.jpeg" onclick="currentSlide(1)" alt="Picture of Prague statues and skyline at sunset">
+  </div>
+
+  <div class="column">
+    <img class="demo" src="images/dancinghouse.jpeg" onclick="currentSlide(2)" alt="Famous Prague dancing house landmark">
+  </div>
+
+  <div class="column">
+    <img class="demo" src="images/praguedecor.jpg" onclick="currentSlide(3)" alt="Decorations from Prague market">
+  </div>
+  <div class="column">
+    <img class="demo" src="images/lonelyplanet.jpeg" onclick="currentSlide(3)" alt="Prague clock, Lonely Planet, landmark">
+  </div>
+</div>
+</div>
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<!--Megan DeFrancesco and Emy Klepacki-->
+        </div>
+        <div class = "travelname" id = "okavango">
+                <h2>Okavango Delta</h2>
+        </div>
+        <div class = "animate">
+                <figure>
+                    <img src = "images/okavango_delta_impala_crossing.jpg" alt = "Okavango Delta Impala Crossing" width = 400>
+                    <img src = "images/safari_lodge.webp" alt = "Safari lodge in Okavango Delta" width = 400>
+                </figure>
+        </div>
+        <div>
+                <h3>Geographic Location: Botswana</h3>
+                <p>Even though diamonds are Botswana’s largest export, its true jewel is the wildlife in it. All the big five game animals are present in the Okavango Delta. It also holds one of the world’s largest animal populations, including elephants, lions, cheetahs, and more. </p>
+                <p>The Okavango Delta is in the middle of a desert, making it one of the few deltas that stand out from the other ~10000 deltas. Oil deposits were recently discovered in the rock in the Delta. This is a possible threat as extraction companies may pollute the water bodies, risking the lives of over 500 species of animals. </p>
+        </div>
+        <div>
+                <h3>Photo Gallery</h3>
+        </div>
+        <div class = "travel_gallary">
+            <img src = "images/okavango_delta_buffalo.jpg" width = 200 alt = "buffalo">
+            <img src = "images/okavango_delta_elephants.jpg" width = 200 alt = elephants>
+            <img src = "images/okavango_delta_lions.jpg" width = 200 alt = lions>
+            <img src = "images/okavango_delta_mokoro.jpg" width = 200 alt = mokoro>
+            <figcaption>
+                Seeing hundreds of buffalo together is a common migration sighting in the Okavango Delta.
+            </figcaption>
+            <figcaption>A herd of elephants walk through swampy ground of the Delta.</figcaption>
+            <figcaption>A lioness with her three cubs covered in mud.</figcaption>
+            <figcaption>A guide taking tourists through the river with both sides covered by lush grass in a canoe-shaped boat called a mokoro.</figcaption>
+                <!-- Dhruv Kapur -->
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/okavango_delta_buffalo.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="images/okavango_delta_elephants.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/okavango_delta_lions.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/okavango_delta_mokoro.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+    
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/okavango_delta_buffalo.jpg" style="width:50%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/okavango_delta_elephants.jpg" style="width:50%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/okavango_delta_lions.jpg" style="width:50%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/okavango_delta_mokoro.jpg" style="width:50%">
+      </div>
+    
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/okavango_delta_buffalo.jpg" onclick="currentSlide(1)" alt="buffalo">
+      </div>
+    
+      <div class="column">
+        <img class="demo" src="images/okavango_delta_elephants.jpg" onclick="currentSlide(2)" alt="elephant">
+      </div>
+    
+      <div class="column">
+        <img class="demo" src="images/okavango_delta_lions.jpg" onclick="currentSlide(3)" alt="lions">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/okavango_delta_mokoro.jpg" onclick="currentSlide(3)" alt="mokoro">
+      </div>
+    </div>
+    </div>
+        <div class = "travelname" id = "zermatt">
+                <h2>Zermatt</h2>
+        </div>
+        <div class = "animate">
+                <figure>
+                    <img src = "images/Zermat_skyline.jpg" alt = "Zermatt Skyline" width = 400>
+                    <img src = "images/geneva_to_zermatt.jpeg" alt = "Geneva to Zermatt" width = 400>
+                </figure>
+        </div>
+        <div>
+                <h3>Geographic Location: Switzerland</h3>
+                <p>Zermatt is a beautiful place, with 365 degree views of the mountains. It’s known for its famous mountain “the Matterhorn,” which is visible from nearly everywhere in the town. The town is vibrant, filled with patrons walking around, shopping for the most high quality snow boots, eating hot Rosti and drinking wine.</p>
+                <p>The skiing in Zermatt is unparalleled. Every day in the winter you can find people skiing all day. When it snows, the mountain becomes even more crowded, with skiers flocking to the mountain from around the country and the world.</p>
+        </div>
+        <div>
+                <h3>Photo Gallery</h3>
+        </div>
+        <div class = "travel_gallary">
+            <img src = "images/River.jpg" alt = "The river flows through the rocks and under the bridge into the town." width = 200>
+            <img src = "images/summer_town.jpg" alt = "On sunny days in the summer the grass could not be greener in Zermatt, displaying all of the town’s colors." width = 200>
+             <img src = "images/matterhorn_clocktower.jpg" alt = "The sunset lights up the matterhorn and clocktower, exposing its beauty." width = 200>
+            <img src = "images/day_town_foot.jpg" alt = "A view on the ground in Zermatt’s town, revealing its energy and culture." width = 200>
+            <figcaption>The river flows through the rocks and under the bridge into the town.</figcaption>
+            <figcaption>On sunny days in the summer the grass could not be greener in Zermatt, displaying all of the town’s colors.</figcaption>
+            <figcaption>The sunset lights up the matterhorn and clocktower, exposing its beauty.</figcaption>
+            <figcaption>A view on the ground in Zermatt’s town, revealing its energy and culture.</figcaption>
+        <!-- Maya Rosenthal  -->
+        </div>
+        <div class="row">
+            <div class="column"> 
+            <img src="images/River.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+            </div>
+                <div class="column">
+                  <img src="images/summer_town.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                  <img src="images/matterhorn_clocktower.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                </div>
+                <div class="column">
+                    <img src="images/day_town_foot.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                  </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+    
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/River.jpg" style="width:50%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/summer_town.jpg" style="width:50%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/matterhorn_clocktower.jpg" style="width:50%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/day_town_foot.jpg" style="width:50%">
+      </div>
+    
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="images/River.jpg" onclick="currentSlide(1)" alt="The river flows through the rocks and under the bridge into the town.">
+      </div>
+    
+      <div class="column">
+        <img class="demo" src="images/summer_town.jpg" onclick="currentSlide(2)" alt="On sunny days in the summer the grass could not be greener in Zermatt, displaying all of the town’s colors.">
+      </div>
+    
+      <div class="column">
+        <img class="demo" src="images/matterhorn_clocktower.jpg" onclick="currentSlide(3)" alt="The sunset lights up the matterhorn and clocktower, exposing its beauty.">
+      </div>
+      <div class="column">
+        <img class="demo" src="images/day_town_foot.jpg" onclick="currentSlide(3)" alt="A view on the ground in Zermatt’s town, revealing its energy and culture.">
+      </div>
+    </div>
+    </div>
+            <div class = "travelname" id = "paris">
+                <h2>Paris</h2>
+            </div>
+            <div class = "animate">
+                <figure>
+                    <img src = "images/paris_daytime.jpg" alt = "City of Paris" width = 400>
+                    <img src = "images/eiffeltower.jpeg" alt = "eiffel tower and flowers" width = 400>
+                </figure>
+            </div>
+            <div>
+                <h3>Geographic Location: France</h3>
+                <p>A city of culture, rich history, and fantastic food, Paris lives up to its iconic reputation in many ways. With notable landmarks including the Eiffel Tower, the Louvre, the Notre Dame, and the Arc de Triomphe, there is a long list of attractions that entice tourists from all over the world. If you get hungry, go visit one of the many Michelin-starred restaurants this city has to offer. </p>
+                <p>This magnificent city houses treasures like the Mona Lisa, and the Musée d'Orsay, showcasing various impressionist masterpieces. From the romantic allure of the Champs-Élysées to the winding Seine river, Paris is a magical place that cannot be rivaled. </p>
+            </div>
+            <div>
+                <h3>Photo Gallery</h3>
+            </div>
+            <div class = "travel_gallary">
+                <img src = "images/paris_eiffel_tower.jpg" alt = "Eiffel Tower" width = 200>
+                <img src = "images/paris_notre_dame.jpg" alt = "Notre Dame" width = 200>
+                <img src = "images/paris_arc_de_triomphe.jpg" alt = "" width = 200>
+                <img src = "images/paris_seine.jpg" alt = "Seine" width = 200>
+                <figcaption>The magnificent Eiffel Tower in all it’s glory</figcaption>
+                <figcaption>The Notre Dame is an iconic cathedral known for its Gothic features and dark history.</figcaption>
+                <figcaption>The Arc de Triomphe is a famous monument dedicated to those who fought and died during the French Revolution.</figcaption>
+                <figcaption> Dramatic sunset over the river Seine.</figcaption>
+                <!-- Phillip Ripsam-Walsh -->
+            </div>
+            <div class="row">
+                <div class="column"> 
+                <img src="images/paris_eiffel_tower.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+                </div>
+                    <div class="column">
+                      <img src="images/paris_notre_dame.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column">
+                      <img src="images/paris_arc_de_triomphe.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column">
+                        <img src="images/paris_seine.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                      </div>
+            </div>
+            <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+        
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/paris_eiffel_tower.jpg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/paris_notre_dame.jpg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/paris_arc_de_triomphe.jpg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/paris_seine.jpg" style="width:50%">
+          </div>
+        
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <!-- Thumbnail image controls -->
+          <div class="column">
+            <img class="demo" src="images/paris_eiffel_tower.jpg" onclick="currentSlide(1)" alt="Eiffel Tower">
+          </div>
+        
+          <div class="column">
+            <img class="demo" src="images/paris_notre_dame.jpg" onclick="currentSlide(2)" alt="Notre Dame">
+          </div>
+        
+          <div class="column">
+            <img class="demo" src="images/paris_arc_de_triomphe.jpg" onclick="currentSlide(3)" alt="Arc de Triomphe">
+          </div>
+          <div class="column">
+            <img class="demo" src="images/paris_seine.jpg" onclick="currentSlide(3)" alt="Seine">
+          </div>
+        </div>
+        </div>
+            <div class = "travelname" id = "tokyo">
+                <h2>
+                    Tokyo
+                </h2>
+            </div>
+            <div class = "animate">
+                <figure>
+                    <img src = "images/tokyo_mall.webp" alt = "Mall in Tokyo" width = 400>
+                    <img src = "images/tokyo_skyline.jpeg" alt = "Skyline of Tokyo" width = 400>
+                </figure>
+            </div>
+            <div>
+                <h3>Geographic Location: Japan</h3>
+                <p>Tokyo, Japan's bustling metropolis, seamlessly blends modernity with tradition, offering a dynamic cityscape of towering skyscrapers juxtaposed with tranquil Shinto shrines and serene gardens. As the epicenter of Japanese culture, Tokyo's vibrant neighborhoods, from Shibuya's iconic crossing to Asakusa's historic Senso-ji temple, promise a diverse and captivating experience for visitors.</p>
+                <p>Tokyo, Japan, is a city of contrasts where ancient traditions harmonize with cutting-edge technology, making it a captivating destination for travelers. From the neon-lit streets of Shinjuku to the serene beauty of Meiji Shrine's forested grounds, Tokyo offers a diverse array of experiences that reflect its unique blend of the past and the future.</p>
+            </div>
+            <div>
+                <h3>Photo Gallery</h3>
+            </div>
+            <div class = "travel_gallary">
+                <img src = "images/Akihabara_area.jpeg" alt = "AKihabara Shopping Area" width = 200>
+                <img src = "images/japan_at_night.jpeg" alt = "Japan skyline at night" width = 200>
+                <img src = "images/tokyo_biking.jpeg" alt = "Tourists Biking in Toyko" width = 200>
+                <img src = "images/december_tokyo.jpg" alt = "Beautiful Tokyo in December" width = 200>
+                <figcaption>Akihabara Shopping Area</figcaption>
+                <figcaption>Japan skyline at night</figcaption>
+                <figcaption>Tourists biking in Tokyo</figcaption>
+                <figcaption>Beautiful Tokyo in December</figcaption>
+                <!-- Megan DeFrancesco -->
+            </div>
+            <div class="row">
+                <div class="column"> 
+                <img src="images/Akihabara_area.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+                </div>
+                    <div class="column">
+                      <img src="images/japan_at_night.jpeg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column">
+                      <img src="images/tokyo_biking.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column">
+                        <img src="images/december_tokyo.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                      </div>
+            </div>
+            <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+        
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/Akihabara_area.jpeg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/japan_at_night.jpeg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/tokyo_biking.jpeg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/december_tokyo.jpg" style="width:50%">
+          </div>
+        
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <!-- Thumbnail image controls -->
+          <div class="column">
+            <img class="demo" src="images/Akihabara_area.jpeg" onclick="currentSlide(1)" alt="AKihabara Shopping Area">
+          </div>
+        
+          <div class="column">
+            <img class="demo" src="images/japan_at_night.jpeg" onclick="currentSlide(2)" alt="Japan skyline at night">
+          </div>
+        
+          <div class="column">
+            <img class="demo" src="images/tokyo_biking.jpeg" onclick="currentSlide(3)" alt="Tourists Biking in Toyko">
+          </div>
+          <div class="column">
+            <img class="demo" src="images/december_tokyo.jpg" onclick="currentSlide(3)" alt="Beautiful Tokyo in December">
+          </div>
+        </div>
+        </div>
+            <div class = "travelname" id = "florence">
+                <h2>Florence</h2>
+            </div>
+            <div class = "animate">
+                <figure>
+                    <img src = "images/florence.jpeg" alt = "Beautiful Florence" width = 400>
+                    <img src = "images/bridges_florence.jpeg" alt = "Bridges in Florence" width = 400>
+                </figure>
+            </div>
+            <div>
+                <h3>Geographic Location: Italy</h3>
+                <p>Florence, Italy, renowned for its artistic treasures and historical significance, is a city that continues to captivate travelers with its enchanting beauty. From the magnificent Florence Cathedral to the exquisite art collections housed in the Uffizi Gallery, this city offers a rich tapestry of culture and history to explore.</p>
+                <p>Nestled in the heart of Tuscany, Florence, Italy, is a city steeped in Renaissance splendor, boasting iconic landmarks like the Florence Cathedral and Michelangelo's David. Its picturesque streets, lined with quaint cafes and artisan shops, invite travelers to savor the timeless charm and artistic heritage that define this enchanting destination.</p>
+            </div>
+            <div>
+                <h3>Photo Gallery</h3>
+            </div>
+            <div class = "travel_gallary">
+                <img src = "images/clock_florence.jpeg" alt = "A clock tower in florence" width = 200>
+                <img src = "images/florence_city.webp" alt = "A gorgeous building in Florence" width = 200>
+                <img src = "images/florence_streets.webp" alt = "Daily life in the Florence streets" width = 200>
+                <img src = "images/skyline_florence.webp" alt = "Florence in the distance" width = 200>
+                <figcaption>A clock tower in the heart of Florence</figcaption>
+                <figcaption>A view of the skyline from a gorgeous building in Florence</figcaption>
+                <figcaption>An image of daily life in the Florence streets.</figcaption>
+                <figcaption>Florence in the distance during a pink sunrise</figcaption>
+                <!-- Megan DeFrancesco -->
+            </div>
+            <div class="row">
+                <div class="column"> 
+                <img src="images/clock_florence.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:200px">
+                </div>
+                    <div class="column">
+                      <img src="images/florence_city.webp" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column">
+                      <img src="images/florence_streets.webp" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column">
+                        <img src="images/skyline_florence.webp" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:200px">
+                      </div>
+            </div>
+            <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+        
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/clock_florence.jpeg" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/florence_city.webp" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/florence_streets.webp" style="width:50%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/skyline_florence.webp" style="width:50%">
+          </div>
+        
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <!-- Thumbnail image controls -->
+          <div class="column">
+            <img class="demo" src="images/clock_florence.jpeg" onclick="currentSlide(1)" alt="A clock tower in florence">
+          </div>
+        
+          <div class="column">
+            <img class="demo" src="images/florence_city.webp" onclick="currentSlide(2)" alt="A gorgeous building in Florence">
+          </div>
+        
+          <div class="column">
+            <img class="demo" src="images/florence_streets.webp" onclick="currentSlide(3)" alt="Daily life in the Florence streets">
+          </div>
+          <div class="column">
+            <img class="demo" src="images/skyline_florence.webp" onclick="currentSlide(3)" alt="Florence in the distance">
+          </div>
+        </div>
+        </div>
+    </main>
+    <script src="css/lightbox.js"></script>
+</body>
+</html>
